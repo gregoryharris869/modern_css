@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="switcher wrapper">
+      <picture class="decorative-image">
+        <source
+          srcset="
+            https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80  1x,
+            https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1600&q=80 2x
+          "
+          media="(max-width: 600px)"
+        />
+        <source
+          srcset="
+            https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80 1x,
+            https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=2400&q=80 2x
+          "
+        />
+        <img
+          src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80"
+          alt=""
+          loading="lazy"
+        />
+      </picture>
+      <div class="content repel" data-repel-variant="vertical">
+        <header class="site-head repel">
+          <p class="site-head__name">Sofa Americano</p>
+          <p>Elevate your space</p>
+        </header>
+        <article class="flow">
+          <h1>A tribute to ancient handicrafts</h1>
+          <p>
+            The materials are simple and completely natural, the internal
+            structure of the stem consists of hundreds of cavities, which makes
+            it strong and light.
+          </p>
+          <p>
+            <a class="icon-link" href="#">
+              <span>Explore Kettle collection</span>
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 25"
+                height="1.5ex"
+                width="auto"
+              >
+                <g>
+                  <path
+                    fill="currentColor"
+                    d="m16.172 11.5-5.364-5.364 1.414-1.414L20 12.5l-7.778 7.778-1.414-1.414 5.364-5.364H4v-2h12.172Z"
+                  />
+                </g>
+              </svg>
+            </a>
+          </p>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+
+body {
+  background: #f3f3f3;
+  color: #252525;
+  line-height: 1.5;
+  font-family: Georgia, serif;
+  padding: 2rem;
+}
+
+h1 {
+  --fluid-type-min: 2.5rem;
+  --fluid-type-max: 5rem;
+  --fluid-type-target: 5vw;
+
+  max-width: 15ch;
+}
+
+h2 {
+  --fluid-type-min: 1.8rem;
+  --fluid-type-max: 3rem;
+}
+
+h3 {
+  --fluid-type-min: 1.5rem;
+  --fluid-type-max: 2.5rem;
+}
+
+h2,
+h3 {
+  max-width: 30ch;
+}
+
+p {
+  max-width: 60ch;
+}
+
+h1,
+h2,
+h3 {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue,
+    helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+h1,
+h2,
+h3,
+p {
+  font-size: clamp(
+    var(--fluid-type-min, 1rem),
+    calc(1rem + var(--fluid-type-target, 3vw)),
+    var(--fluid-type-max, 1.3rem)
+  );
+}
+
+
+
+
+
+
+
+
+
