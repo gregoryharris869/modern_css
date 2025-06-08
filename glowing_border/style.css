@@ -10,6 +10,40 @@
   --font-serif: Georgia, sans-serif;
   --tracking: -0.05ch;
   --tracking-s: -0.075ch;
+  /* --surface: #333; */
+  --glow-intensity: 0.125;
+  --glow-size: 1rem;
+  --border-width: 4px;
+}
+
+@property --clr-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: red;
+}
+
+@property --clr-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: yellow;
+}
+
+@property --clr-3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: green;
+}
+
+@property --clr-4 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: blue;
+}
+
+@property --clr-5 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: purple;
 }
 
 *,
@@ -79,14 +113,19 @@ a:not([class]) {
   color: currentColor;
 }
 
+html {
+  color-scheme: dark;
+  font-family: var(--font-base);
+}
+
 body {
   background: var(--color-light);
   color: var(--color-dark);
-  font-family: var(--font-base);
   font-size: var(--size-step-1);
   letter-spacing: var(--tracking);
   line-height: 1.4;
   overflow-x: clip;
+  background: var(--surface);
 }
 
 h1,
@@ -94,6 +133,7 @@ h2,
 h3 {
   letter-spacing: var(--tracking-s);
   line-height: 1;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -117,10 +157,62 @@ p {
 }
 
 .glowing_border {
-  --gradient-glow: yellow, green, blue, purple, red;
+  --gradient-glow: var(--clr-1), var(--clr-2), var(--clr-3), var(--clr-4),
+    var(--clr-5), var(--clr-1);
+  /* Two reds for conic */
   margin-block: 3rem;
   padding: 8rem 3rem;
   max-width: 60ch;
-  border: 3px solid transparent;
-  background: conic-gradient(var(--gradient-glow));
+  border: var(--border-width, 4px) solid transparent;
+  border-left: 0;
+  border-radius: 0 100vw 100vw 0;
+  background: linear-gradient(var(--surface, canvas) 0 0) padding-box,
+    conic-gradient(from -90deg, var(--gradient-glow)) border-box;
+  position: relative;
+  isolation: isolate;
+  animation: glow 10s infinite;
+}
+
+.glowing_border::before,
+.glowing_border::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+.glowing_border::before {
+  z-index: -1;
+  background: var(--surface, canvas);
+  inset: 0.5rem;
+  scale: 1.2 1;
+  transform-origin: right;
+  filter: blur(var(--glow-size, 1rem));
+}
+.glowing_border::after {
+  z-index: -2;
+  inset: -1.5rem;
+  background: conic-gradient(from -90deg, var(--gradient-glow));
+  filter: blur(var(--glow-size, 1rem));
+  opacity: var(--glow-intensity, 0.125);
+}
+
+.glowing_border.right {
+  margin-inline-start: auto;
+  border-radius: 100vw 0 0 100vw;
+  border: var(--border-width, 4px) solid transparent;
+  border-right: 0;
+
+  &::before {
+    transform-origin: left;
+  }
+}
+
+@keyframes glow {
+  50% {
+    --clr-1: yellow;
+    --clr-2: blue;
+    --clr-3: red;
+    --clr-4: green;
+    --clr-5: purple;
+  }
 }
