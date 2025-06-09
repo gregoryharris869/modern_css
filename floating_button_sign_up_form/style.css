@@ -1,0 +1,113 @@
+:root {
+  --color-dark: #101724;
+  --color-primary: #415a77;
+  --color-light: #f3f0e7;
+  --color-light-shade: #ede9dc;
+  --gutter: 2em;
+  --radius: 0.25em;
+  --font-base: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
+}
+
+body {
+  align-content: center;
+  background: var(--color-dark);
+  color: var(--color-light);
+  font-family: var(--font-base);
+  margin: 0;
+  padding: var(--gutter);
+}
+
+input {
+  padding: 0.75em;
+}
+
+::placeholder {
+  opacity: 1;
+  color: var(--color-dark);
+}
+
+:focus {
+  outline: 1px solid currentColor;
+  outline-offset: -0.25lh;
+}
+
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter);
+}
+
+.sidebar > :last-child {
+  flex-basis: var(--sidebar-target-width, 20rem);
+  flex-grow: 1;
+}
+
+.sidebar > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: var(--sidebar-content-min-width, 50%);
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+/* button */
+
+.button {
+  background: var(--color-primary);
+  color: var(--color-light);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius);
+  padding: 0.5em 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--color-dark);
+}
+
+.button:active {
+  transform: scale(99%);
+}
+
+/* Sign up form */
+
+.sign-up-form {
+  --sidebar-target-width: max-content;
+  --sidebar-content-min-width: 13rem;
+  --sign-up-form-space: 0.5em;
+  --gutter: var(--sign-up-form-space);
+
+  max-width: 60rem;
+  margin-inline: auto;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.sign-up-form__controls {
+  background: var(--color-light-shade);
+  padding: var(--sign-up-form-space);
+  border-radius: calc(var(--radius) + var(--sign-up-form-space));
+}
+
+.sign-up-form input {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+}
+
+.sign-up-form input:focus {
+  outline-offset: 0;
+}
+
+.sign-up-form label {
+  display: block;
+  max-width: 50ch;
+  margin-inline: auto;
+  text-wrap: balance;
+}
