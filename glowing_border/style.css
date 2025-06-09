@@ -46,6 +46,12 @@
   initial-value: purple;
 }
 
+@property --glow-deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: -90deg;
+}
+
 *,
 *::before,
 *::after {
@@ -167,7 +173,7 @@ p {
   border-left: 0;
   border-radius: 0 100vw 100vw 0;
   background: linear-gradient(var(--surface, canvas) 0 0) padding-box,
-    conic-gradient(from -90deg, var(--gradient-glow)) border-box;
+    conic-gradient(from var(--glow-deg), var(--gradient-glow)) border-box;
   position: relative;
   isolation: isolate;
   animation: glow 10s infinite;
@@ -191,7 +197,7 @@ p {
 .glowing_border::after {
   z-index: -2;
   inset: -1.5rem;
-  background: conic-gradient(from -90deg, var(--gradient-glow));
+  background: conic-gradient(from var(--glow-deg), var(--gradient-glow));
   filter: blur(var(--glow-size, 1rem));
   opacity: var(--glow-intensity, 0.125);
 }
@@ -208,11 +214,12 @@ p {
 }
 
 @keyframes glow {
-  50% {
-    --clr-1: yellow;
+  100% {
+    /* --clr-1: yellow;
     --clr-2: blue;
     --clr-3: red;
     --clr-4: green;
-    --clr-5: purple;
+    --clr-5: purple; */
+    --glow-deg: 270deg;
   }
 }
