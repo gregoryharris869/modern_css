@@ -1,12 +1,12 @@
 :root {
   /* Colors */
-  --background: hsl(25, 18%, 87%);
-  --med--grey: hsl(270, 3%, 30%);
-  --med-tan: hsl(27, 33%, 69%);
-  --med-green: hsl(115, 5%, 60%);
-  --accent: hsl(43, 63%, 53%);
-  --dark-text: hsl(0, 1%, 10%);
-  --light-text: hsl(0, 0%, 91%);
+  --text: hsl(225, 50%, 3%);
+  --text-secondary: hsl(0, 0%, 100%);
+  --background: hsl(228, 45%, 98%);
+  --primary: hsl(222, 53%, 51%);
+  --secondary: hsl(317, 53%, 73%);
+  --accent: hsl(355, 53%, 62%);
+
   /* Font Size */
   --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
   --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
@@ -19,10 +19,14 @@
 
   --tracking: -0.05ch;
   --tracking-s: -0.075ch;
-  --wrapper-max-width: 55rem;
+  --wrapper-max-width: 65rem;
   --gutter: var(--space-s-m);
   --border-radius: var(--size-step-1);
   --size-step-1: clamp(0.25rem, 0.25rem + 0.1vw, 0.375rem);
+  --space: 100px;
+  /* fonts */
+  --main-font: Ubuntu, sans-serif;
+  --paragraph: lora, serif;
 }
 
 /* Box sizing rules */
@@ -30,6 +34,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Prevent font size inflation */
@@ -63,6 +69,8 @@ ol[role="list"] {
 body {
   line-height: 1.5;
   background-color: var(--background);
+  letter-spacing: var(--tracking);
+  font-family: var(--main-font);
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -125,10 +133,8 @@ textarea:not([rows]) {
 h1,
 h2,
 h3 {
-  font-family: Inter, sans-serif;
   line-height: 1.1;
   letter-spacing: var(--tracking-s);
-  color: var(--dark-text);
 }
 
 ul,
@@ -150,6 +156,15 @@ h3 {
 
 p {
   font-size: var(--step-1);
+  letter-spacing: var(--tracking-s);
+  font-family: var(--paragraph);
+}
+
+li,
+label,
+input {
+  font-size: var(--step-0);
+  letter-spacing: var(--tracking-s);
 }
 
 .flow > * + * {
@@ -160,8 +175,8 @@ p {
   margin-left: auto;
   margin-right: auto;
   max-width: var(--wrapper-max-width, 85rem);
-  padding-left: var(--gutter);
-  padding-right: var(--gutter);
+  /* padding-left: var(--gutter);
+  padding-right: var(--gutter); */
   position: relative;
 }
 /* Hero Section */
@@ -171,17 +186,17 @@ p {
 }
 
 .hero {
-  padding: 100px;
+  padding: var(--space);
 }
 
 .hero_highlight {
-  color: var(--med-green);
+  color: var(--primary);
 }
 
 /* Feature Section */
 
 .feature {
-  padding: 100px;
+  padding: var(--space);
 }
 
 .feature_item {
@@ -191,9 +206,94 @@ p {
 .feature_title {
   font-weight: 500;
   text-transform: uppercase;
-  color: var(--accent);
 }
 
-.feature_title_selected {
-  text-decoration: underline;
+/* CTA */
+
+.cta {
+  padding: var(--space);
+  background-color: var(--accent);
+  color: var(--text-secondary);
+  border-radius: var(--border-radius);
+}
+
+.cta_description {
+  padding: 15px 0;
+}
+
+button {
+  color: none;
+  border: none;
+}
+
+.cta_button {
+  background-color: var(--primary);
+  color: var(--text-secondary);
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-size: var(--step-1);
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Video */
+
+.video {
+  padding: var(--space);
+}
+
+.video_controls {
+  padding-top: 20px;
+}
+
+.video_button {
+  background-color: var(--primary);
+  color: var(--text-secondary);
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-size: var(--step-1);
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.video_container {
+  margin-top: 20px;
+  background-color: var(--secondary);
+  width: 100%;
+  height: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  border-radius: var(--border-radius);
+}
+
+/* programs */
+
+.program {
+  padding: var(--space);
+  background-color: var(--primary);
+  border-radius: var(--border-radius);
+
+  & h2 {
+    text-align: center;
+    color: var(--text-secondary);
+  }
+}
+
+.program_cards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(25ch, 100%), 1fr));
+  margin-top: 25px;
+}
+
+.program_card {
+  background-color: var(--secondary);
+  padding: 10px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  height: 400px;
 }

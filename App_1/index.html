@@ -3,6 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
@@ -16,7 +35,7 @@
         </p>
       </header>
 
-      <article class="feature">
+      <article class="feature flow">
         <section class="feature_container flow">
           <div class="feature_item">
             <h2 class="feature_title feature_title_selected">
@@ -59,6 +78,70 @@
           our platform and how we can help you achieve your educational goals.
         </p>
         <button class="cta_button cta_button_primary">Contact Us</button>
+      </article>
+      <!--  -->
+      <article class="video">
+        <h3 class="video_title">Grow Your Child's Future</h3>
+        <p class="video_description">
+          Watch our video to learn how our platform can help your child succeed
+          in their educational journey. From personalized learning experiences
+          to innovative teaching methods, we are dedicated to empowering young
+          minds.
+        </p>
+        <div class="video_controls">
+          <button class="video_button video_button_primary">
+            <i class="fas fa-book"></i> Learn More
+          </button>
+          <button class="video_button video_button_secondary">
+            <i class="fas fa-play-circle"></i> Watch Video
+          </button>
+        </div>
+        <div class="video_container"></div>
+      </article>
+      <!-- programs -->
+      <article class="program">
+        <h2>Explore Our Programs : Tailored Learning for Every Student</h2>
+        <div class="program_cards">
+          <div class="program_card"></div>
+          <div class="program_card"></div>
+          <div class="program_card"></div>
+        </div>
+      </article>
+      <!-- Form -->
+      <article class="element">
+        <div class="element_left">
+          <div class="element_placeholder"></div>
+        </div>
+        <div class="element_right">
+          <h2>Sign Up Today Now</h2>
+          <p class="element_subtitle">
+            Join our community of learners and educators. Sign up today to gain
+            access to our innovative educational platform and start your journey
+            towards academic success.
+          </p>
+          <form action="" class="element_form">
+            <h3>Your Interest :</h3>
+            <ul class="element_list" role="list">
+              <li class="element_list-item">Web Development</li>
+              <li class="element_list-item">UI UX Design</li>
+              <li class="element_list-item">Digital Marketing</li>
+            </ul>
+            <div class="element_form-group">
+              <label for="username">Username :</label>
+              <input type="text" id="username" name="username" />
+            </div>
+            <div class="element_form-group">
+              <label for="course">Select Course :</label>
+              <select id="course">
+                <option value="">Choose Course</option>
+                <option value="html">HTML & CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="react">React</option>
+              </select>
+            </div>
+            <button class="element_button" type="submit">Submit</button>
+          </form>
+        </div>
       </article>
     </main>
   </body>
