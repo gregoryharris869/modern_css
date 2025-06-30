@@ -1,11 +1,11 @@
 :root {
   /* Colors */
-  --text: hsl(225, 50%, 3%);
   --text-secondary: hsl(0, 0%, 100%);
-  --background: hsl(228, 45%, 98%);
-  --primary: hsl(222, 53%, 51%);
-  --secondary: hsl(317, 53%, 73%);
-  --accent: hsl(355, 53%, 62%);
+  --text: hsl(209, 93%, 5%);
+  --background: hsl(204, 100%, 97%);
+  --primary: hsl(204, 96%, 53%);
+  --secondary: hsl(332, 96%, 71%);
+  --accent: hsl(13, 96%, 63%);
 
   /* Font Size */
   --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
@@ -18,7 +18,7 @@
   /* spacing */
 
   --tracking: -0.05ch;
-  --tracking-s: -0.075ch;
+  --tracking-s: -0.1ch;
   --wrapper-max-width: 65rem;
   --gutter: var(--space-s-m);
   --border-radius: var(--size-step-1);
@@ -140,6 +140,7 @@ h3 {
 ul,
 ol {
   padding-inline-start: 1em;
+  padding-left: 0;
 }
 
 h1 {
@@ -164,6 +165,7 @@ li,
 label,
 input {
   font-size: var(--step-0);
+
   letter-spacing: var(--tracking-s);
 }
 
@@ -276,11 +278,11 @@ button {
   padding: var(--space);
   background-color: var(--primary);
   border-radius: var(--border-radius);
+}
 
-  & h2 {
-    text-align: center;
-    color: var(--text-secondary);
-  }
+.program h2 {
+  text-align: center;
+  color: var(--text-secondary);
 }
 
 .program_cards {
@@ -296,4 +298,148 @@ button {
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
   height: 400px;
+}
+
+/* Form  */
+
+.element {
+  padding: var(--space);
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  background-color: var(--accent);
+  border-radius: var(--border-radius);
+  margin-top: 2rem;
+}
+
+.element_left {
+  flex: 1;
+}
+
+.element_right {
+  flex: 1;
+}
+
+.element_subtitle {
+  /* color: var(--text-secondary); */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.element_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.element_placeholder {
+  background-color: var(--background);
+  width: 100%;
+  height: 100%;
+}
+
+.element_list-item {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--text-secondary);
+}
+
+.element_list-item:before {
+  content: "✓";
+  color: var(--text-secondary);
+  margin-right: 10px;
+}
+
+.element_form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.element_form-group label {
+  font-weight: 500;
+}
+
+.element_form-group input,
+.element_form-group select {
+  padding: 12px;
+  border: 1px solid var(--text);
+  border-radius: var(--border-radius);
+  font-size: var(--step-0);
+}
+
+select:focus,
+input:focus {
+  outline: 2px solid var(--primary);
+  border: 1px solid var(--primary);
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-overflow: ""; /* Removes default arrow from firefox */
+  text-indent: 0.01px; /* Removes default arrow from firefox */
+  background: url("data:image/svg+xml;utf8,<svg fill='black' height='16' viewBox='0 0 20 20' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M5.516 7.548a1 1 0 0 1 1.415 0L10 10.617l3.07-3.07a1 1 0 1 1 1.415 1.415l-3.777 3.778a1 1 0 0 1-1.415 0L5.516 8.963a1 1 0 0 1 0-1.415z'/></svg>")
+    no-repeat right 1rem center/1em;
+  padding-right: 2.5em;
+  background-color: var(--background);
+}
+
+.element_button {
+  background-color: var(--primary);
+  color: var(--text-secondary);
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-size: var(--step-1);
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  margin-top: 10px;
+}
+
+.element_button:hover {
+  background-color: var(--primary);
+  opacity: 0.9;
+}
+
+/* images */
+.hero {
+  height: 50vh;
+  background-image: url("./images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.hero {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; */
+  min-height: 60vh;
+  height: 60vh;
+  background-image: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.15) 100%
+    ),
+    url("./images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  color: var(--text-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 40vh;
+    height: 40vh;
+    padding: 40px 10px;
+    border-radius: 0;
+  }
 }
