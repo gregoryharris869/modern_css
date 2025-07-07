@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- 1. Flex - Header Navigation -->
-    <header class="header wrapper">
+    <header class="header">
       <nav class="header-nav">
         <div class="header-logo">TODAY</div>
         <div class="header-links">
@@ -24,9 +24,16 @@
       <!-- 2. Flex and Column - Featured Article -->
       <section class="featured container">
         <div class="featured-image">
-          <img src="images/main-image.jpg" alt="Featured News" />
+          <img
+            src="images/main-image.jpg"
+            alt="Featured News"
+            fetchpriority="high"
+            loading="eager"
+            width="800"
+            height="450"
+          />
         </div>
-        <div class="featured-content">
+        <div class="featured-content flow">
           <h2>Moment Obama raps Eminem's Lose Yourself at Detroit rally</h2>
           <p>
             Eminemm has introduced former US President Barack Obama at a
@@ -38,21 +45,22 @@
           </p>
           <div class="featured-footer">
             <button href="#" class="featured-more">Read More</button>
-            <span class="featured-time">2 min read</span>
+            <span class="featured-time"><p>2 min read</p></span>
           </div>
         </div>
       </section>
 
       <!-- 3. Flex/Grid List - Latest Cards without text overlay -->
       <section class="latest">
-        <div class="container">
-          <h2 class="latest-title">US Election 2024</h2>
-          <p class="latest-subtitle">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quos.
-          </p>
+        <h2 class="latest-title">US Election 2024</h2>
+        <p class="latest-subtitle">
+          Stay up to date with the latest headlines, analysis, and election
+          coverage across the United States.
+        </p>
+
+        <div class="container flow">
           <div class="latest-list">
-            <article class="latest-card">
+            <article class="latest-card flow">
               <img src="images/image2.jpg" alt="News Image" />
               <div class="latest-content">
                 <h3>Trump Claims Historic Victory</h3>
@@ -60,7 +68,7 @@
                 <a href="#" class="latest-more">Read More</a>
               </div>
             </article>
-            <article class="latest-card">
+            <article class="latest-card flow">
               <img src="images/image3.jpg" alt="News Image" />
               <div class="latest-content">
                 <h3>Harris Rally Draws Crowds</h3>
@@ -68,7 +76,7 @@
                 <a href="#" class="latest-more">Read More</a>
               </div>
             </article>
-            <article class="latest-card">
+            <article class="latest-card flow">
               <img src="images/image4.jpg" alt="News Image" />
               <div class="latest-content">
                 <h3>Record Turnout Expected</h3>
@@ -76,7 +84,7 @@
                 <a href="#" class="latest-more">Read More</a>
               </div>
             </article>
-            <article class="latest-card">
+            <article class="latest-card flow">
               <img src="images/image5.jpg" alt="News Image" />
               <div class="latest-content">
                 <h3>Debate Night Highlights</h3>
@@ -84,7 +92,7 @@
                 <a href="#" class="latest-more">Read More</a>
               </div>
             </article>
-            <article class="latest-card">
+            <article class="latest-card flow">
               <img src="images/image6.jpg" alt="News Image" />
               <div class="latest-content">
                 <h3>Latest Poll Numbers</h3>
@@ -96,43 +104,9 @@
         </div>
       </section>
 
-      <!-- 4a. Flex/Grid 2D - Hot News - Flex Version -->
-      <!-- <section class="hot">
-        <div class="container">
-          <h2 class="hot-title">Explore the Hot News</h2>
-          <p class="hot-subtitle">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quos.
-          </p>
-          <div class="hot-flex">
-            <article class="hot-card hot-left">
-              <img src="images/image4.jpg" alt="Breaking News" />
-              <div class="hot-overlay">Breaking News</div>
-            </article>
-
-            <div class="hot-right">
-              <div class="hot-right-inner">
-                <article class="hot-card">
-                  <img src="images/image8.jpg" alt="Economy Update" />
-                  <div class="hot-overlay">Economy</div>
-                </article>
-                <article class="hot-card">
-                  <img src="images/image9.jpg" alt="Technology News" />
-                  <div class="hot-overlay">Technology</div>
-                </article>
-              </div>
-              <article class="hot-card">
-                <img src="images/image10.jpg" alt="World News" />
-                <div class="hot-overlay">World</div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
       <!-- 4b. Flex/Grid 2D - Hot News - Grid Version -->
       <section class="hot">
-        <div class="container">
+        <div class="container flow">
           <h2 class="hot-title">Explore the Hot News</h2>
           <p class="hot-subtitle">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
@@ -166,7 +140,7 @@
           <p class="masonry-subtitle">
             At tortor scelerisque neque tempor purus morbi.
           </p>
-          <div class="masonry-grid">
+          <div class="masonry-grid" data-rows="masonry" data-layout="50-50">
             <div class="masonry-item item1">
               <img src="images/image4.jpg" alt="Masonry Image 1" />
             </div>

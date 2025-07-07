@@ -107,7 +107,10 @@ img,
 picture {
   max-width: 100%;
   display: block;
-  border-radius: var(--border-radius);
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
 }
 
 /* Inherit fonts for inputs and buttons */
