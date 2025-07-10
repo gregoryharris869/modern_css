@@ -278,8 +278,65 @@ nav {
 /* hero */
 
 .section_container {
+  max-width: var(--wrapper-max-width);
   margin: auto;
   padding: 5rem 1rem;
+}
+
+.section_header {
+  font-weight: 600;
+  font-family: var(--header-font);
+  line-height: 2.75rem;
+  color: var(--white);
+}
+
+.section_description {
+  color: var(--text-light);
+  line-height: 1.75rem;
+}
+
+.header_container {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+.header_container::before {
+  position: absolute;
+  content: "KING";
+  top: 0;
+  right: 0;
+  color: var(--white);
+  font-size: clamp(1rem, -7.3478rem + 41.7391vw, 25rem);
+  font-weight: 600;
+  font-family: var(--header-font);
+  line-height: 25rem;
+  background-image: linear-gradient(
+    to top,
+    var(--header-background-color),
+    var(--white)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.header_container::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background-image: linear-gradient(
+    to top,
+    var(--header-background-color) 25%,
+    #ffffff00
+  );
+  z-index: 1;
 }
 
 .header_container h1 {
@@ -309,18 +366,6 @@ nav {
   color: var(--white);
 }
 
-/* .section_header {
-  font-weight: 600;
-  font-family: var(--header-font);
-  line-height: 2.75rem;
-  color: var(--white);
-} */
-
-.section_description {
-  color: var(--text-light);
-  line-height: 1.75rem;
-}
-
 /* shop */
 
 .shop {
@@ -335,11 +380,6 @@ nav {
   left: 0;
   width: 100%;
   height: 5rem;
-  background-image: linear-gradient(
-    to bottom,
-    var(--header-background-color),
-    var(--background-color)
-  );
 }
 
 .shop_container {
@@ -363,11 +403,12 @@ nav {
 
 .shop_card::before {
   position: absolute;
+  padding-left: 1rem;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   color: var(--white);
-  font-size: 15rem;
+  font-size: clamp(1.2rem, -5.3391rem + 32.6957vw, 20rem);
   font-weight: 600;
   font-family: var(--header-font);
   line-height: 15rem;
@@ -435,19 +476,90 @@ nav {
   color: var(--text-light);
 }
 
-/* @media (width > 540px) {
-  .shop_container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* about */
 
-  .banner_container img {
-    opacity: 1;
-  }
+.about {
+  overflow: hidden;
+}
 
-  .footer_container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-} */
+.about_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.about_image {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.about_image::before {
+  position: absolute;
+  content: "ABOUT US";
+  top: 0;
+  right: 0;
+  color: var(--white);
+  font-size: var(--space-3xl);
+  font-weight: 600;
+  font-family: var(--header-font);
+  white-space: nowrap;
+  line-height: 15rem;
+  background-image: linear-gradient(
+    to bottom,
+    var(--background-color),
+    var(--white)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.about_image::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-image: linear-gradient(to top, var(--background-color), #ffffff00);
+  z-index: 1;
+}
+
+.about_image img {
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.about_content .section_header {
+  margin-bottom: 1rem;
+}
+
+.about_content .section_description {
+  margin-bottom: 1rem;
+}
+
+.about_stats {
+  max-width: 350px;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about_stats h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--primary-color);
+}
+
+.about_stats p {
+  font-family: var(--header-font);
+  color: var(--text-light);
+}
 
 @media (width > 768px) {
   nav {
@@ -515,9 +627,4 @@ nav {
   .nav_btns .btn:hover {
     color: var(--primary-color);
   }
-  /* shop */
-
-  /* .shop_container {
-    grid-template-columns: repeat(3, 1fr);
-  } */
 }
