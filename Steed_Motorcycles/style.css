@@ -643,6 +643,111 @@ nav {
   object-position: center;
 }
 
+/* banner */
+
+.banner_container {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.banner_container::before {
+  position: absolute;
+  content: "MON";
+  top: 50%;
+  left: 0;
+  transform: translate(calc(-50% + 7.5rem), -50%) rotate(-90deg);
+  color: var(--white);
+  font-size: 15rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  white-space: nowrap;
+  line-height: 15rem;
+  background-image: linear-gradient(
+    to bottom,
+    var(--background-color),
+    var(--white)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.banner_container::after {
+  position: absolute;
+  content: "STER";
+  top: 50%;
+  right: 0;
+  transform: translate(calc(50% - 7.5rem), -50%) rotate(90deg);
+  color: var(--white);
+  font-size: 15rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  white-space: nowrap;
+  line-height: 15rem;
+  background-image: linear-gradient(
+    to bottom,
+    var(--background-color),
+    var(--white)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.banner_container p {
+  position: absolute;
+  font-weight: 500;
+  color: var(--primary-color);
+  z-index: 1;
+}
+
+.banner_container p:nth-child(1) {
+  top: 15%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+.banner_container p:nth-child(2) {
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+}
+
+.banner_container p:nth-child(3) {
+  bottom: 15%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+.banner_container p:nth-child(4) {
+  top: 15%;
+  right: 20%;
+  transform: translate(50%, -50%);
+}
+
+.banner_container p:nth-child(5) {
+  top: 50%;
+  right: 15%;
+  transform: translate(50%, -50%);
+}
+
+.banner_container p:nth-child(6) {
+  bottom: 15%;
+  right: 20%;
+  transform: translate(50%, -50%);
+}
+
+.banner_container img {
+  max-width: 350px;
+  margin-inline: auto;
+  opacity: 0.5;
+}
+
 @media (width > 768px) {
   nav {
     position: static;
