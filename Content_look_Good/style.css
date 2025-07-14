@@ -4,6 +4,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+
+  padding: 0;
 }
 
 /* Remove default margin */
@@ -21,8 +23,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -61,9 +63,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -82,14 +84,13 @@ select {
   --color-dark: #252525;
   --color-light: #efefef;
   --color-primary: #1a8fe3;
+  /* font */
   --size-step-0: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
   --size-step-1: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
   --size-step-2: clamp(1.56rem, calc(1.41rem + 0.76vw), 2rem);
   --size-step-3: clamp(1.95rem, calc(1.71rem + 1.24vw), 2.66rem);
   --size-step-4: clamp(2.44rem, calc(2.05rem + 1.93vw), 3.55rem);
 }
-
-
 
 body {
   background: var(--color-light);
