@@ -1,0 +1,70 @@
+.content-container {
+  background-color: #eee;
+  max-width: 800px;
+  margin-inline: auto;
+  padding: 2em;
+}
+
+/* solution 1 */
+
+/* needs to have image to work */
+
+/* figure {
+  display: flex;
+  flex-direction: column;
+  max-width: min-content;
+  margin-inline: auto;
+} */
+
+/* solution 2 */
+
+/* body {
+  display: grid;
+  container-type: inline-size;
+}
+
+figure {
+  place-self: center;
+  margin: 0;
+  width: min-content;
+  background: goldenrod;
+}
+
+img {
+  width: min(400px, 100cqw);
+}
+
+figcaption {
+  padding: 0.5em;
+  font: 1.25em ubuntu, trebuchet ms, sans-serif;
+} */
+
+/* solution 3 */
+
+/* figure {
+  inline-size: fit-content;
+  margin-inline: auto;
+}
+figcaption {
+  contain: inline-size;
+}
+img {
+  max-width: 100%;
+} */
+
+/* solution 4 */
+
+figure {
+  margin: 0;
+  inline-size: fit-content;
+  margin-inline: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+figcaption {
+  contain: inline-size;
+  margin-block-start: 0.5em;
+}
