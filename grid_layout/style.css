@@ -1,0 +1,69 @@
+/*
+  AUTO GRID
+  Set the minimum item size with `--auto-grid-min-size` and you'll
+  get a fully responsive grid with no media queries.
+*/
+
+/* Use this as slandered */
+
+/* .auto-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-size, 16rem), 1fr)
+  );
+  grid-gap: 1rem;
+} */
+
+/* Presentational styles */
+
+body {
+  background: #efefef;
+  padding: 1rem;
+  line-height: 1.4;
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.wrapper {
+  max-width: 65rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+li {
+  padding: 5rem 1rem;
+  text-align: center;
+  background: hsl(338, 81%, 41%);
+  color: #ffffff;
+  list-style: none;
+}
+
+/* For this layout, the minimum viable experience is stacked items with some vertical margin between each one, which for the 5.31% of browsers that don’t support CSS grid */
+
+.auto-grid > * {
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.auto-grid > * + * {
+  margin-top: 1rem;
+}
+
+@supports (display: grid) {
+  .auto-grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(var(--auto-grid-min-size, 16rem), 1fr)
+    );
+    grid-gap: 1rem;
+  }
+
+  .auto-grid > * {
+    max-width: unset;
+    margin: unset;
+  }
+}
