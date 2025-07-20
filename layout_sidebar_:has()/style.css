@@ -165,68 +165,31 @@ p {
   --flow-space: 0.5em;
 }
 
-/*  */
+.wrapper {
+  max-width: var(--wrapper-max-width, 65rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
 
-.sidebar {
+/* content */
+
+.with-sidebar {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gutter, var(--space-m));
+  gap: 6rem;
 }
 
-.sidebar:not([data-direction="rtl"]) > :first-child {
-  flex-basis: var(--sidebar-target-width, 20rem);
+.sidebar {
+  /* ↓ The width when the sidebar _is_ a sidebar */
+  flex-basis: 20rem;
   flex-grow: 1;
 }
 
-.sidebar:not([data-direction="rtl"]) > :last-child {
+.not-sidebar {
+  /* ↓ Grow from nothing */
   flex-basis: 0;
   flex-grow: 999;
-  min-width: var(--sidebar-content-min-width, 50%);
-}
-
-.sidebar[data-direction="rtl"] > :last-child {
-  flex-basis: var(--sidebar-target-width, 20rem);
-  flex-grow: 1;
-}
-
-.sidebar[data-direction="rtl"] > :first-child {
-  flex-basis: 0;
-  flex-grow: 999;
-  min-width: var(--sidebar-content-min-width, 50%);
-}
-
-.post {
-  --sidebar-content-min-width: 60%;
-  --sidebar-target-width: clamp(16rem, 30vi, 30rem);
-  --gutter: var(--space-xl);
-
-  container-type: inline-size;
-}
-
-.post__breakout {
-  width: 100cqi;
-  position: relative;
-  z-index: 1;
-  background: var(--color-dark);
-  color: var(--color-light-glare);
-  padding: var(--space-m);
-}
-
-.post__sidebar {
-  container-type: inline-size;
-}
-
-.post__meta {
-  border-inline-start: 1px solid;
-  height: 100%;
-  padding: var(--space-m) var(--gutter);
-  padding-left: 1rem;
-}
-
-@container (width > 50cqi) {
-  .post__meta {
-    border-inline-start: 0;
-    border-block-start: 1px solid;
-    padding-inline: 0;
-  }
+  /* ↓ Wrap when the elements are of equal width */
+  min-inline-size: 50%;
 }
