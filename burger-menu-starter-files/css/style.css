@@ -1,0 +1,255 @@
+:root {
+  --color-light: #ffffff;
+  --color-light-shade: #fafffd;
+  --color-dark: #062726;
+  --color-primary: #d81159;
+  --color-primary-shade: #b90f4c;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Core globals */
+
+body {
+  background: var(--color-light-shade);
+  color: var(--color-dark);
+  line-height: 1.5;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2 {
+  font-family: "Roboto", Times, serif;
+  font-weight: 600;
+  line-height: 1.1;
+  max-width: 30ch;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+a {
+  color: currentColor;
+}
+
+:focus {
+  outline: 1px dotted currentColor;
+  outline-offset: 0.2rem;
+}
+
+p,
+li,
+dl {
+  max-width: 70ch;
+}
+
+article {
+  margin-top: 2.5rem;
+  font-size: 1.25rem;
+}
+
+main:focus {
+  outline: none;
+}
+
+@media (min-width: 40em) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.wrapper {
+  max-width: 65rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+/* skip-link */
+
+.skip-link {
+  display: inline-block;
+  padding: 0.7rem 1rem 0.5rem 1rem;
+  background: var(--color-light);
+  color: var(--color-primary-shade);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.skip-link:hover {
+  background: var(--color-dark);
+  color: var(--color-light-shade);
+}
+
+.skip-link:not(:focus) {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+/* nav */
+
+.site-head {
+  padding: 0.6rem 0;
+  background: var(--color-primary);
+  border-top: 5px solid var(--color-primary);
+  border-bottom: 5px solid var(--color-primary-shade);
+  color: var(--color-light);
+  line-height: 1.1;
+}
+
+.site-head :focus {
+  outline-color: var(--color-light);
+}
+
+.site-head__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 1rem;
+}
+
+.site-head__brand {
+  display: block;
+  width: 3rem;
+}
+
+.navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.8rem;
+  padding: 0;
+}
+
+.navigation li {
+  margin: 0.1rem;
+}
+
+.navigation a {
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: currentColor;
+}
+
+.navigation a:hover {
+  color: var(--color-dark);
+}
