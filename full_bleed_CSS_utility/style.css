@@ -1,0 +1,152 @@
+/**
+ * FULL BLEED
+ *
+ * Add this class to an element to make it fill the width of the screen 
+ * and sit horizontally central
+ */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+/* EVERYTHING BELOW THIS LINE IS FOR PRESENTATION ONLY */
+
+/* A promo presentational component */
+.promo {
+  color: #ffffff;
+  background-color: hsl(338, 81%, 41%);
+  padding: 3rem 2rem;
+}
+
+.promo__inner {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.promo h2.fluid-type {
+  --fluid-type-min-size: 2;
+  --fluid-type-max-size: 3.5;
+
+  margin: 0;
+  max-width: 20ch;
+}
+
+.promo p {
+  font-size: 1.5rem;
+}
+
+/* A feature figure presentational component */
+.feature-figure img {
+  width: 100%;
+  box-shadow: 0 0 20px hsl(0, 0%, 0%, 0.2);
+}
+
+.feature-figure figcaption {
+  text-align: center;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+@supports (object-fit: cover) {
+  .feature-figure img {
+    max-height: 25rem;
+    object-fit: cover;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Shared wrapper */
+.wrapper {
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+* GENERAL HTML STYLES
+*/
+body {
+  font-family: Georgia, serif;
+  background: hsl(39, 100%, 97%);
+  color: hsl(222, 30%, 16%);
+  padding: 1rem 2rem 4rem 2rem;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+p {
+  font-size: 1.25rem;
+  max-width: 75ch;
+}
+
+h1,
+h2,
+h3,
+blockquote {
+  font-family: "Playfair Display", serif;
+}
+
+code {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0 0.4rem;
+  color: hsl(338, 81%, 41%);
+}
+
+a {
+  color: currentcolor;
+  text-decoration: underline;
+}
+
+article > * + * {
+  margin-top: 1.8em;
+}
+
+/**
+ * FLUID TYPE
+ *
+ * Scale text based on viewport and the following variables. Props should be unitless, but will be converted
+ * to REM units. E.G '1' will be converted to '1rem'
+ *
+ * --fluid-type-min-size: The smallest font size. Default 1
+ * --fluid-type-max-size: The largest font size: Default 2
+ * --fluid-type-min-screen: The smallest viewport size that this works for: Default 20
+ * --fluid-type-max-screen: The largest viewport size that this works for: Default 88
+ */
+.fluid-type {
+  --fluid-type-min-size: 1;
+  --fluid-type-max-size: 2;
+  --fluid-type-min-screen: 20;
+  --fluid-type-max-screen: 88;
+
+  /* We multiply by 1rem to essentially stick a rem unit to a number. */
+  font-size: calc(
+    (var(--fluid-type-min-size) * 1rem) +
+      (var(--fluid-type-max-size) - var(--fluid-type-min-size)) *
+      (100vw - (var(--fluid-type-min-screen) * 1rem)) /
+      (var(--fluid-type-max-screen) - var(--fluid-type-min-screen))
+  );
+}
+
+/*
+* SET LOCKS ON ELEMENTS
+*/
+h1.fluid-type {
+  --fluid-type-min-size: 2;
+  --fluid-type-max-size: 4;
+}
+
+h2.fluid-type {
+  --fluid-type-min-size: 1.5;
+  --fluid-type-max-size: 2.2;
+}
