@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: var(--wrapper-max-width, 75rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-split {
+  --center-split-max-width: 30vw;
+}
+
+/* So that content vertically aligns, we set it as a flex item */
+.center-split > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
+/* Reset flex and padding rules for media elements because
+   we want them to bleed out */
+.center-split > img,
+.center-split > picture,
+.center-split > video {
+  display: block;
+  padding: 0;
+
+  /* Stuff is gonna get stretchy, so maintain 
+     some order and crop media */
+  object-fit: cover;
+}
+
+@media (min-width: 720px) {
+  .center-split {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    align-items: stretch;
+  }
+
+  /* Apply our max width to the 
+     direct child of the .center-split child */
+  .center-split > * > * {
+    max-width: var(--center-split-max-width);
+  }
+
+  /* Set auto margins to push the content into the center */
+  .center-split > *:nth-child(odd) > * {
+    margin: 0 0 0 auto;
+  }
+
+  .center-split > *:nth-child(even) > * {
+    margin: 0 auto 0 0;
+  }
+
+  /* Reset max width and margin rules for media elements because
+     we want them to bleed out */
+  .center-split > img,
+  .center-split > picture,
+  .center-split > video {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+/* Presentational styles for this demo */
+.center-split {
+  color: #141414;
+  font-size: 1.35rem;
+}
+
+.center-split {
+  background: #dddddd;
+}
+
+.center-split img {
+  filter: saturate(75%);
+}
+
+/* Global presentational styles */
+
+body {
+  background: #efefef;
+  color: #262322;
+  line-height: 1.6;
+  font-family: Georgia, serif;
+}
+
+h1,
+h2 {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.1;
+  width: 100%;
+}
+
+h1 {
+  color: #254e70;
+  font-size: 2.5rem;
+  max-width: 30ch;
+  padding-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+article > p {
+  font-size: 1.2rem;
+  max-width: 60ch;
+  margin: 1rem 0 2rem 0;
+}
+
+@media (min-width: 720px) {
+  article > h1,
+  article > p {
+    margin-left: 3rem;
+  }
+}
+
+code {
+  font-size: 1.2em;
+  border: 1px solid #c1c1c1;
+  white-space: pre;
+  padding: 2px;
+  font-weight: 700;
+}

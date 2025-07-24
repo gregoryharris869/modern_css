@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #141414;
+  color: #f3f3f3;
+  line-height: 1.6;
+  font-family: Georgia, serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.1;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  max-width: 30ch;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+code {
+  font-size: 1.2em;
+  border: 1px solid #c1c1c1;
+  white-space: pre;
+  padding: 2px;
+  font-weight: 700;
+}
+
+/* .wrapper {
+  max-width: var(--wrapper-max-width, 65rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+} */
+
+@media (min-width: 720px) {
+  article > h1,
+  article > p {
+    margin-left: 3rem;
+  }
+}
+
+/*  */
+
+.center-split {
+  --center-split-max-width: 30vw;
+}
+
+.center-split > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2.5rem;
+}
+
+.center-split > img,
+.center-split > picture,
+.center-split > video {
+  display: block;
+  padding: 0;
+  object-fit: cover;
+}
+
+@media (min-width: 720px) {
+  /* [1] */
+  .center-split {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    align-items: stretch;
+  }
+
+  /* [2] */
+  .center-split > * > * {
+    max-width: var(--center-split-max-width);
+  }
+
+  /* [3] */
+  .center-split > *:nth-child(odd) > * {
+    margin: 0 0 0 auto;
+  }
+
+  .center-split > *:nth-child(even) > * {
+    margin: 0 auto 0 0;
+  }
+
+  /* [4] */
+  .center-split > img,
+  .center-split > picture,
+  .center-split > video {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.center-split {
+  color: #f3f3f3;
+  font-size: 1.35rem;
+}
+
+.center-split h1,
+.center-split h2 {
+  background: #03435b;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.center-split:nth-of-type(1) > p {
+  background: #022b3a;
+}
+
+.center-split:nth-of-type(2) p {
+  background: #923e30;
+}
+
+.center-split:nth-of-type(2) h2 {
+  background: #b84e3d;
+  justify-content: flex-end;
+}
+
+.center-split:nth-of-type(3) p:first-child {
+  background: #1c6e7e;
+}
+
+.center-split:nth-of-type(3) p:last-child {
+  background: #134a54;
+}
+
+@media (min-width: 720px) {
+  .center-split h1,
+  .center-split h2 {
+    font-size: 3.75rem;
+  }
+}
