@@ -1,0 +1,86 @@
+body {
+  background: #efefef;
+  padding: 3rem 2rem;
+  line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+.box {
+  color: #fff;
+  padding: 2rem;
+  max-width: 30rem;
+  background: #252525;
+  position: relative;
+  box-shadow: none;
+  transition: transform 300ms ease-in-out, box-shadow 400ms ease,
+    background 100ms ease;
+}
+
+.box:hover,
+.box:focus-within {
+  background: #111111;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.5rem);
+}
+
+.box > * + * {
+  margin-top: 1em;
+}
+
+.breakout-button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.6rem 2rem;
+  background: transparent;
+  color: currentColor;
+  border: 1px solid;
+  transition: background 100ms ease;
+  position: static;
+}
+
+.breakout-button,
+.breakout-button::before {
+  cursor: pointer;
+}
+
+.breakout-button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.breakout-button:focus {
+  outline: none;
+}
+
+.breakout-button:hover {
+  background: #333333;
+}
+
+.breakout-button:focus::before {
+  outline: 1px solid #ffffff;
+  outline-offset: -0.8rem;
+}
+
+:not([data-interactive]) > .breakout-button::before {
+  display: none;
+}
+
+[data-interactive]:hover,
+[data-interactive]:focus-within {
+  background: #111111;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.5rem);
+}
