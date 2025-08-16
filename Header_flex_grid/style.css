@@ -325,12 +325,6 @@ textarea {
   z-index: 1;
 }
 
-@media print {
-  .header {
-    display: none;
-  }
-}
-
 @media (min-width: 30em) {
   .header {
     --flow-space: 0;
