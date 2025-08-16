@@ -77,38 +77,6 @@ li::after {
     linear-gradient(-45deg, var(--yellow) 30%, var(--green) 30%);
 }
 
-/* li:nth-child(2n)::before{
-  background-image: linear-gradient(-45deg,var(--pink) 53.5%,var(--blue) 53.5%,var(--blue) 60%,var(--pink) 60%), linear-gradient(45deg,var(--pink) 65.3%,var(--blue) 65.3%,var(--blue) 69.9%,var(--pink) 69.9%);
-}
-
-li:nth-child(2n)::after{
-  background-image: linear-gradient(45deg,var(--pink) 40%,var(--blue) 40%), linear-gradient(-45deg,var(--pink) 30%,var(--blue) 30%);
-}
-
-li:nth-child(5n)::before{
-  background-image: linear-gradient(-45deg,var(--green) 53.5%,var(--pink) 53.5%,var(--pink) 60%,var(--green) 60%), linear-gradient(45deg,var(--green) 65.3%,var(--pink) 65.3%,var(--pink) 69.9%,var(--green) 69.9%);
-}
-
-li:nth-child(5n)::after{
-  background-image: linear-gradient(45deg,var(--green) 40%,var(--pink) 40%), linear-gradient(-45deg,var(--green) 30%,var(--pink) 30%);
-}
-
-li:nth-child(7n)::before,li:nth-child(7n-4)::before{
-  background-image: linear-gradient(-45deg,var(--blue) 53.5%,var(--white) 53.5%,var(--white) 60%,var(--blue) 60%), linear-gradient(45deg,var(--blue) 65.3%,var(--white) 65.3%,var(--white) 69.9%,var(--blue) 69.9%);
-}
-
-li:nth-child(7n)::after,li:nth-child(7n-4)::after{
-  background-image: linear-gradient(45deg,var(--blue) 40%,var(--white) 40%), linear-gradient(-45deg,var(--blue) 30%,var(--white) 30%);
-}
-
-li:nth-child(9n)::before,li:nth-child(9n-5)::before{
-  background-image: linear-gradient(-45deg,var(--white) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--white) 60%), linear-gradient(45deg,var(--white) 65.3%,var(--green) 65.3%,var(--green) 69.9%,var(--white) 69.9%);
-}
-
-li:nth-child(9n)::after,li:nth-child(9n-5)::after{
-  background-image: linear-gradient(45deg,var(--white) 40%,var(--green) 40%), linear-gradient(-45deg,var(--white) 30%,var(--green) 30%);
-} */
-
 img {
   position: absolute;
   width: 43%;

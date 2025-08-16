@@ -342,7 +342,7 @@ textarea {
 }
 
 .post__content {
-  --flow-space: var(--post-content-flow-space, var(--space-l));
+  --flow-space: var(--space-l);
   padding-block: var(--gutter-wrapper-inner-block, var(--gutter));
   padding-inline: var(--gutter-wrapper-inner-inline, var(--gutter));
 }
@@ -351,20 +351,20 @@ textarea {
   .post__content {
     border-inline-start: var(--stroke);
     order: 1;
-    padding-block: var(--post-content-padding-block-md, var(--space-3xl));
-    padding-inline: var(--post-content-padding-inline-md, var(--space-3xl));
+    padding-block: var(--space-3xl);
+    padding-inline: var(--space-3xl);
   }
 }
 
 .post__meta {
-  --flow-space: var(--post-meta-flow-space, var(--space-xs-s));
+  --flow-space: var(--space-xs-s);
   padding-block: var(--gutter-wrapper-inner-block, var(--gutter));
   padding-inline: var(--gutter-wrapper-inner-inline, var(--gutter));
 }
 
 @media (min-width: 50em) {
   .post__meta {
-    padding-block: var(--post-meta-padding-block-md, var(--space-3xl));
+    padding-block: var(--space-3xl);
   }
 }
 
@@ -379,14 +379,14 @@ textarea {
 }
 
 .post__heading {
-  font-family: var(--post-heading-font-family, var(--font-accent));
-  font-size: var(--post-heading-font-size, var(--size-step-4));
-  max-width: var(--post-heading-max-width, 40ch);
+  font-family: var(--main-font);
+  font-size: var(--size-step-4);
+  max-width: 40ch;
   text-wrap: balance;
 }
 
 .post__heading a {
-  text-decoration: var(--post-heading-text-decoration, none);
+  text-decoration: none;
 }
 
 .post__heading a:hover {
@@ -401,7 +401,7 @@ textarea {
 }
 
 .post__summary {
-  max-width: var(--post-summary-max-width, 60ch);
+  max-width: 60ch;
 }
 
 .post__author-group.cluster {
