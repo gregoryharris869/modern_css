@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Header</title>
   </head>
@@ -11,7 +15,8 @@
       <div class="wrapper">
         <div class="brand-header__grid flow">
           <a href="/" class="brand-header__logo">
-            <svg
+            <!-- <svg
+
               role="img"
               aria-label="Piccalilli"
               focusable="false"
@@ -53,7 +58,8 @@
                   d="M10.5636 4.83999V16.8519H11.7563C14.951 16.8519 18.0178 14.6795 18.0178 10.4626C18.0178 6.33083 14.951 4.83999 11.7563 4.83999H10.5636ZM10.5636 18.8964V28.7786H15.4195V30.9083H0V28.7786H2.7261V4.92518H0V2.79541H14.0139C20.7439 2.79541 25.898 5.05297 25.898 10.6755C25.898 16.1278 20.7013 18.8964 13.9287 18.8964H10.5636Z"
                 ></path>
               </g>
-            </svg>
+            </svg> -->
+            <h1>Gregory Harris</h1>
           </a>
           <div class="brand-header__tagline">
             <p>Front-end education for the real world. <em>Since 2018.</em></p>
@@ -69,28 +75,54 @@
           <nav class="brand-header__nav">
             <ul class="cluster">
               <li>
-                <a href="/blog/">Articles</a>
+                <a href="#">About</a>
               </li>
               <li>
-                <a href="/links/">Links</a>
+                <a href="#">Work</a>
               </li>
               <li>
-                <a href="/courses/">Courses</a>
-              </li>
-              <li>
-                <a href="/the-index/">Newsletter</a>
-              </li>
-              <li>
-                <a href="https://opencollective.com/piccalilli">Support us</a>
-              </li>
-              <li>
-                <a href="/advertise">Advertise</a>
+                <a href="#">Contact</a>
               </li>
             </ul>
           </nav>
           <hr />
+          <!-- <div class="brand-header__controls">
+            <ul class="cluster" role="list">
+              <li>
+                <a class="icon-link" href="#">☾</a>
+              </li>
+            </ul>
+          </div> -->
+          <div class="brand-header__controls">
+            <ul class="cluster" role="list">
+              <li>
+                <a
+                  href="#"
+                  class="icon-link"
+                  data-icon-link-variant="hidden-label"
+                  ><svg
+                    width="24"
+                    height="24"
+                    aria-hidden="true"
+                    focusable="false"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M11.3807 2.01886C9.91573 3.38768 9 5.3369 9 7.49999C9 11.6421 12.3579 15 16.5 15C18.6631 15 20.6123 14.0843 21.9811 12.6193C21.6613 17.8537 17.3149 22 12 22C6.47715 22 2 17.5228 2 12C2 6.68514 6.14629 2.33869 11.3807 2.01886Z"
+                    ></path></svg
+                ></a>
+              </li>
+              <li>
+                <a href="#" class="icon-link"> ☀️ </a>
+              </li>
+            </ul>
+          </div>
         </div>
+        <header class="ribbon"></header>
       </div>
     </header>
+    <main></main>
   </body>
 </html>
