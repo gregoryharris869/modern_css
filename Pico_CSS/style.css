@@ -1,0 +1,81 @@
+:root {
+  --wrapper-max-width: 90rem;
+  --gutter: var(--space-m);
+
+  /* spacing */
+  --space-2xs: clamp(0.375rem, 0.3414rem + 0.1678vi, 0.5rem);
+  --space-xs: clamp(0.5625rem, 0.5122rem + 0.2517vi, 0.75rem);
+  --space-s: clamp(0.75rem, 0.6829rem + 0.3356vi, 1rem);
+  --space-m: clamp(1.125rem, 1.0243rem + 0.5034vi, 1.5rem);
+  --space-l: clamp(1.5rem, 1.3658rem + 0.6711vi, 2rem);
+  --space-xl: clamp(1.875rem, 1.7072rem + 0.8389vi, 2.5rem);
+  --space-2xl: clamp(3rem, 2.7315rem + 1.3423vi, 4rem);
+  --space-3xl: clamp(3.75rem, 3.4144rem + 1.6779vi, 5rem);
+  --space-4xl: clamp(5.625rem, 5.1216rem + 2.5168vi, 7.5rem);
+  --space-5xl: clamp(7.5rem, 6.8289rem + 3.3557vi, 10rem);
+
+  --flow-space: var(--space-m);
+
+  /* ch */
+  --measure: 65ch;
+  --measure-xs: 20ch;
+  --measure-s: 35ch;
+  --measure-m: 45ch;
+  --measure-l: 75ch;
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+.wrapper {
+  max-width: var(--wrapper-max-width, 65rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--space-m) 1rem;
+}
+
+h1 {
+  max-width: var(--measure-xs);
+  text-wrap: balance;
+}
+
+p {
+  max-width: var(--measure-m);
+}
+
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter, var(--space-m));
+}
+
+.sidebar:not([data-direction="rtl"]) > :first-child {
+  flex-basis: var(--sidebar-target-width, 20rem);
+  flex-grow: 1;
+}
+
+.sidebar:not([data-direction="rtl"]) > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: var(--sidebar-content-min-width, 50%);
+}
+
+.sidebar[data-direction="rtl"] > :last-child {
+  flex-basis: var(--sidebar-target-width, 20rem);
+  flex-grow: 1;
+}
+
+.sidebar[data-direction="rtl"] > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: var(--sidebar-content-min-width, 50%);
+}
+
+.post {
+  --sidebar-content-min-width: 60%;
+  --sidebar-target-width: clamp(16rem, 30vi, 30rem);
+  --gutter: var(--space-xl);
+
+  container-type: inline-size;
+}

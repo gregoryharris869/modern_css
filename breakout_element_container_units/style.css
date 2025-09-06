@@ -118,6 +118,13 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
+.wrapper {
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--space-m) 1rem;
+}
+
 body {
   background: #f3f3f3;
   color: #252525;
