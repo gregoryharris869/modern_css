@@ -140,14 +140,6 @@ class BurgerMenu extends HTMLElement {
         break;
     }
   }
-
-
-
-
-
-
-
-
 }
 
 if ('customElements' in window) {
@@ -155,4 +147,12 @@ if ('customElements' in window) {
 }
 
 export default BurgerMenu;
+
+
+
+
+
+
+
+
 

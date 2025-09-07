@@ -227,3 +227,21 @@ input {
   color: var(--color-light-glare);
   padding: var(--space-m);
 }
+
+.post__sidebar {
+  container-type: inline-size;
+}
+
+.post__meta {
+  border-inline-start: 1px solid;
+  height: 100%;
+  padding: var(--space-m) var(--gutter);
+}
+
+@container (width > 50cqi) {
+  .post__meta {
+    border-inline-start: 0;
+    border-block-start: 1px solid;
+    padding-inline: 0;
+  }
+}
