@@ -2,7 +2,7 @@
 
 /**
  * Returns back a NodeList of focusable elements
- * that exist within the passed parnt HTMLElement
+ * that exist within the passed parent HTMLElement
  *
  * @param {HTMLElement} parent HTML element
  * @returns {NodeList} The focusable elements that we can find
