@@ -1,5 +1,5 @@
 :root {
-  --wrapper-max-width: 90rem;
+  --wrapper-max-width: 80rem;
   --gutter: var(--space-m);
 
   /* spacing */
@@ -29,53 +29,23 @@
 }
 
 .wrapper {
-  max-width: var(--wrapper-max-width, 65rem);
+  max-width: var(--wrapper-max-width);
   margin-left: auto;
   margin-right: auto;
   padding: var(--space-m) 1rem;
 }
 
 h1 {
-  max-width: var(--measure-xs);
+  text-wrap: balance;
+}
+
+h2 {
   text-wrap: balance;
 }
 
 p {
   max-width: var(--measure-m);
 }
-
-.sidebar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gutter, var(--space-m));
-}
-
-.sidebar:not([data-direction="rtl"]) > :first-child {
-  flex-basis: var(--sidebar-target-width, 20rem);
-  flex-grow: 1;
-}
-
-.sidebar:not([data-direction="rtl"]) > :last-child {
-  flex-basis: 0;
-  flex-grow: 999;
-  min-width: var(--sidebar-content-min-width, 50%);
-}
-
-.sidebar[data-direction="rtl"] > :last-child {
-  flex-basis: var(--sidebar-target-width, 20rem);
-  flex-grow: 1;
-}
-
-.sidebar[data-direction="rtl"] > :first-child {
-  flex-basis: 0;
-  flex-grow: 999;
-  min-width: var(--sidebar-content-min-width, 50%);
-}
-
-.post {
-  --sidebar-content-min-width: 60%;
-  --sidebar-target-width: clamp(16rem, 30vi, 30rem);
-  --gutter: var(--space-xl);
-
-  container-type: inline-size;
+.logo {
+  height: 1.9rem;
 }

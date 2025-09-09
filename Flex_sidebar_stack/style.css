@@ -97,3 +97,9 @@ p {
 .sidebar {
   padding: var(--space-xs);
 }
+
+.post__meta {
+  border-inline-start: 1px solid;
+  height: 100%;
+  padding: var(--space-m) var(--gutter);
+}
