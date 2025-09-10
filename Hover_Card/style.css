@@ -1,0 +1,293 @@
+:root {
+  --gutter: var(--space-m) var(--space-s);
+  --card-padding: var(--space-s);
+  --radius: var(--space-xs);
+  --transform-size: var(--space-xs);
+  --transform-space: var(--space-m);
+  /* space */
+
+  --space-xs: clamp(0.5625rem, 0.5122rem + 0.2517vi, 0.75rem);
+  --space-s: clamp(0.75rem, 0.6829rem + 0.3356vi, 1rem);
+  --space-m: clamp(1.125rem, 1.0243rem + 0.5034vi, 1.5rem);
+  --space-l: clamp(1.5rem, 1.3658rem + 0.6711vi, 2rem);
+  --space-xl: clamp(1.875rem, 1.7072rem + 0.8389vi, 2.5rem);
+  --space-2xl: clamp(3rem, 2.7315rem + 1.3423vi, 4rem);
+  --space-3xl: clamp(3.75rem, 3.4144rem + 1.6779vi, 5rem);
+  --space-4xl: clamp(5.625rem, 5.1216rem + 2.5168vi, 7.5rem);
+  --space-5xl: clamp(7.5rem, 6.8289rem + 3.3557vi, 10rem);
+  --space-2xs-xs: clamp(0.375rem, 0.2743rem + 0.5034vi, 0.75rem);
+  --space-xs-s: clamp(0.5625rem, 0.4451rem + 0.5872vi, 1rem);
+  --space-s-m: clamp(0.75rem, 0.5487rem + 1.0067vi, 1.5rem);
+  --space-m-l: clamp(1.125rem, 0.8901rem + 1.1745vi, 2rem);
+  --space-l-xl: clamp(1.5rem, 1.2315rem + 1.3423vi, 2.5rem);
+}
+
+/*  */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  line-height: 1.5;
+  letter-spacing: var(--tracking);
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+blockquote:not([class]),
+li,
+p {
+  max-width: 65ch;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure text areas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  letter-spacing: var(--tracking-s);
+}
+
+ul,
+ol {
+  padding-inline-start: 1em;
+  padding-left: 0;
+}
+
+h1 {
+  font-size: var(--step-5);
+}
+
+h2 {
+  font-size: var(--step-4);
+}
+
+h3 {
+  font-size: var(--step-3);
+}
+
+h4 {
+  font-size: var(--step-2);
+}
+
+p {
+  font-size: var(--step-0);
+  letter-spacing: var(--tracking-s);
+  font-family: var(--paragraph);
+}
+
+a {
+  font-size: var(--step-0);
+  letter-spacing: var(--tracking-s);
+}
+
+li,
+label,
+input {
+  font-size: var(--step-0);
+
+  letter-spacing: var(--tracking-s);
+}
+
+body {
+  font-size: 1rem;
+  padding-inline: var(--gutter);
+}
+
+body:has(:checked) {
+  --pseudo-element-bg: red;
+  --pseudo-element-opacity: 0.4;
+}
+
+.wrapper {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.flow > * + * {
+  margin-block-start: var(--space-2xs, 1em);
+}
+
+.card {
+  display: block;
+  padding: var(--card-padding);
+  font-size: var(--size-step-00);
+  text-decoration: none;
+  color: var(--color-dark);
+  background: var(--color-light-shade);
+
+  /* https://piccalil.li/blog/relative-rounded-corners/ */
+  border-radius: calc(var(--radius) + var(--card-padding));
+
+  /* Make the card a relative parent for the pseudo-element */
+  position: relative;
+}
+
+.card__heading {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.card__heading a {
+  text-decoration: none;
+}
+
+/* Create an invisible pseudo-element that maintains a hover area for us */
+.card__heading a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: calc(100% + var(--transform-space));
+  background: var(--pseudo-element-bg, none);
+  opacity: var(--pseudo-element-opacity, 0);
+  cursor: pointer;
+}
+
+.card p {
+  text-box: cap alphabetic;
+}
+
+.card img {
+  border-radius: var(--radius);
+}
+
+.card__price {
+  font-weight: 700;
+
+  /* Gives us a touch of nice space */
+  margin-block-end: var(--space-xs);
+}
+
+.card:has(:hover) {
+  /* Converts to a negative value for us */
+  transform: translateY(calc(var(--transform-size) * -1));
+  transition: transform 150ms linear;
+}
+
+.card:has(:hover) img {
+  filter: brightness(110%);
+}
+
+.credit {
+  margin-block-start: var(--space-3xl);
+}
+
+input {
+  margin: 0;
+}
+
+label:has(input) {
+  display: inline-flex;
+  gap: var(--space-xs);
+  align-items: center;
+  margin-block-end: var(--space-l);
+}
+
+/* Undoing a global style from the base that we don't need */
+label:has(input) input {
+  transform: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-placement, auto-fill),
+    minmax(var(--grid-min-item-size, 16rem), 1fr)
+  );
+  gap: var(--gutter, var(--space-l));
+}
+
+.grid[data-layout="thirds"] {
+  /* --grid-placement: auto-fit; */
+  --grid-min-item-size: max(16rem, 30%);
+}
