@@ -294,15 +294,12 @@ textarea {
 }
 
 .tab-panel {
-  --gutter-wrapper-inner-block: var(
-    --tab-panel-gutter-wrapper-inner-block,
-    var(--space-s)
-  );
-  --sidebar-target-width: var(--tab-panel-sidebar-target-width, 18rem);
+  --gutter-wrapper-inner-block: var(--space-s);
+  --sidebar-target-width: 18rem;
 }
 
 .tab-panel .wrapper[data-wrapper-type="inner"]:first-child {
-  border-block: var(--tab-panel-stroke, var(--stroke));
+  border-block: var(--stroke);
 }
 
 .tab-panel__header h2 {
@@ -332,7 +329,7 @@ textarea {
 }
 
 .tab-panel__post-item {
-  border-block-end: var(--tab-panel-stroke, var(--stroke));
+  border-block-end: var(--stroke);
   display: flex;
   padding-block: var(--space-xl);
   padding-inline: var(--gutter);
@@ -348,7 +345,7 @@ textarea {
   }
 
   .tab-panel__post-item:nth-child(odd) {
-    border-inline-end: var(--tab-panel-stroke, var(--stroke));
+    border-inline-end: var(--stroke);
   }
 }
 
@@ -362,7 +359,7 @@ textarea {
   }
 
   .tab-panel__post-item:nth-child(3n + 2) {
-    border-inline: var(--tab-panel-stroke, var(--stroke));
+    border-inline: var(--stroke);
   }
 }
 
@@ -401,10 +398,7 @@ textarea {
 
 .card__heading a:hover {
   text-decoration: underline;
-  text-decoration-color: var(
-    --card-heading-link-text-decoration-color,
-    var(--text-decoration-color)
-  );
+  text-decoration-color: var(--text-decoration-color);
 }
 
 .card__summary {
