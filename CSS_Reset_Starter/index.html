@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern CSS Reset Showcase</title>
+  <style>
+    /* Modern CSS Reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -moz-text-size-adjust: none;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+      hanging-punctuation: first last;
+    }
+
+    body {
+      min-height: 100vh;
+      line-height: 1.5;
+      font-family: system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    button,
+    input,
+    label {
+      line-height: 1.1;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-wrap: balance;
+    }
+
+    p,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+    }
+
+    ul[role='list'],
+    ol[role='list'] {
+      list-style: none;
+    }
+
+    a:not([class]) {
+      text-decoration-skip-ink: auto;
+      color: currentColor;
+    }
+
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+      max-width: 100%;
+      display: block;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    textarea:not([rows]) {
+      min-height: 10em;
+    }
+
+    :target {
+      scroll-margin-block: 5ex;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    #root {
+      isolation: isolate;
+    }
+
+    /* Showcase Styling */
+    #root {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #343640 0%, #164660 100%);
+      color: white;
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .section h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    .section p {
+      margin-bottom: 1rem;
+      opacity: 0.95;
+    }
+
+    .typography-demo h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .typography-demo h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .typography-demo h3 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .typography-demo h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .typography-demo h5 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .typography-demo h6 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      background: white;
+      color: #667eea;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .form-demo {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      padding: 0.75rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      width: 100%;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: white;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .image-demo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .image-placeholder {
+      aspect-ratio: 16/9;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      opacity: 0.7;
+    }
+
+    .list-demo {
+      margin-top: 1rem;
+    }
+
+    .list-demo ul,
+    .list-demo ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .list-demo li {
+      margin-bottom: 0.5rem;
+    }
+
+    ul[role='list'] {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    ul[role='list'] li {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 0;
+    }
+
+    .long-word-demo {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      max-width: 300px;
+    }
+
+    a {
+      color: #ffd700;
+      font-weight: 600;
+    }
+
+    .feature-badge {
+      display: inline-block;
+      background: rgba(255, 215, 0, 0.2);
+      color: #ffd700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <header class="section">
+      <h1>Modern CSS Reset Showcase</h1>
+      <p>This page demonstrates the improved CSS reset with real examples of typography, forms, images, and interactive
+        elements.</p>
+    </header>
+
+    <section class="section typography-demo" id="typography">
+      <h2>Typography <span class="feature-badge">text-wrap: balance</span></h2>
+      <h1>Heading 1: This is a very long heading that demonstrates text wrapping balance</h1>
+      <h2>Heading 2: Another long heading example</h2>
+      <h3>Heading 3: Medium heading</h3>
+      <h4>Heading 4: Smaller heading</h4>
+      <h5>Heading 5: Even smaller</h5>
+      <h6>Heading 6: Smallest heading</h6>
+      <p>This is a paragraph demonstrating the default line height of 1.5. The text should be comfortable to read with
+        proper spacing between lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Here's a link example: <a href="#typography">Jump to typography section</a> (notice the scroll margin when you
+        click).</p>
+    </section>
+
+    <section class="section">
+      <h2>Overflow Wrap <span class="feature-badge">overflow-wrap: break-word</span></h2>
+      <p>Long words won't break your layout:</p>
+      <div class="long-word-demo">
+        <p>Supercalifragilisticexpialidocious</p>
+        <p>https://www.example.com/very-long-url-that-could-break-layout</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Buttons & Interactions <span class="feature-badge">font: inherit</span></h2>
+      <p>Buttons inherit font properties from their parent:</p>
+      <div class="button-group">
+        <button>Primary Action</button>
+        <button>Secondary Action</button>
+        <button>Tertiary Action</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Form Elements <span class="feature-badge">font: inherit</span></h2>
+      <p>All form elements inherit typography and respect box-sizing:</p>
+      <div class="form-demo">
+        <input type="text" placeholder="Text input">
+        <input type="email" placeholder="Email input">
+        <select>
+          <option>Select an option</option>
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </select>
+        <textarea placeholder="Textarea without rows attribute (min-height: 10em)"></textarea>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Images & Media <span class="feature-badge">max-width: 100%</span></h2>
+      <p>Images are responsive by default and won't overflow their containers:</p>
+      <div class="image-demo">
+        <div class="image-placeholder">Image 1</div>
+        <div class="image-placeholder">Image 2</div>
+        <div class="image-placeholder">Image 3</div>
+      </div>
+    </section>
+
+    <section class="section list-demo">
+      <h2>Lists</h2>
+      <p>Default lists maintain their semantics:</p>
+      <ul>
+        <li>Unordered list item 1</li>
+        <li>Unordered list item 2</li>
+        <li>Unordered list item 3</li>
+      </ul>
+      <ol>
+        <li>Ordered list item 1</li>
+        <li>Ordered list item 2</li>
+        <li>Ordered list item 3</li>
+      </ol>
+      <p>Lists with role="list" have no default styling:</p>
+      <ul role="list">
+        <li>Tag 1</li>
+        <li>Tag 2</li>
+        <li>Tag 3</li>
+        <li>Tag 4</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Accessibility Features</h2>
+      <ul>
+        <li><strong>Reduced Motion:</strong> Respects prefers-reduced-motion preference</li>
+        <li><strong>Font Smoothing:</strong> Improved text rendering on macOS/iOS</li>
+        <li><strong>Scroll Margin:</strong> Anchored elements have extra scroll margin (try the typography link above)
+        </li>
+        <li><strong>System Fonts:</strong> Uses system-ui for faster load and native feel</li>
+        <li><strong>Stacking Context:</strong> Isolated root prevents z-index conflicts</li>
+      </ul>
+    </section>
+  </div>
+</body>
+
+</html>
